@@ -3,10 +3,10 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 const images = [
-  { src: "C:\Users\User\OneDrive\Dokumen\portfolio-web\public\gallery\karya1.jpg", title: "Artwork 1" },
-  { src: "C:\Users\User\OneDrive\Dokumen\portfolio-web\public\gallery\karya2.jpg", title: "Artwork 2" },
-  { src: "C:\Users\User\OneDrive\Dokumen\portfolio-web\public\gallery\karya3.jpg", title: "Artwork 3" },
-  { src: "C:\Users\User\OneDrive\Dokumen\portfolio-web\public\gallery\karya3.jpg", title: "Artwork 4" },
+  { src: "/gallery/karya1.jpg", title: "abox eyes" },
+  { src: "/gallery/karya2.png", title: "fareza" },
+  { src: "/gallery/karya3.png", title: "i am gonna growing" },
+  { src: "/gallery/karya4.png", title: "people go and go" },
 ];
 
 export default function App() {
@@ -28,18 +28,8 @@ export default function App() {
             key={i}
             src={img.src}
             alt={img.title}
-            style={{
-              width: "100%",
-              borderRadius: "8px",
-              cursor: "pointer",
-              transition: "0.3s",
-            }}
-            onMouseOver={e => e.target.style.transform = "scale(1.05)"}
-            onMouseOut={e => e.target.style.transform = "scale(1)"}
-            onClick={() => {
-              setIndex(i);
-              setOpen(true);
-            }}
+            style={{ width: "100%", borderRadius: "8px", cursor: "pointer" }}
+            onClick={() => { setIndex(i); setOpen(true); }}
           />
         ))}
       </div>
@@ -47,8 +37,8 @@ export default function App() {
       <Lightbox
         open={open}
         close={() => setOpen(false)}
-        slides={images}
         index={index}
+        slides={images}
       />
     </div>
   );

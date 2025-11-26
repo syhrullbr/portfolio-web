@@ -79,7 +79,7 @@ export default function App() {
         <div style={{ padding: "40px", textAlign: "center" }}>
           <h1>About Me</h1>
           <img 
-            src="/profile.jpg" 
+            src="/gallery/karya0.jpg" 
             alt="profile"
             style={{
               width: "140px",
@@ -99,7 +99,7 @@ export default function App() {
       {/* ================= GALLERY ================= */}
       {page === "gallery" && (
         <div style={{ padding: "20px" }}>
-          <h1 style={{ textAlign: "center" }}>My Works</h1>
+          <h1 style={{ textAlign: "center" }}>Karya Saya</h1>
 
           <div style={{
             display: "grid",
@@ -124,7 +124,7 @@ export default function App() {
       {/* ================= NOTES ================= */}
       {page === "notes" && (
         <div style={{ padding: "20px", maxWidth: "500px", margin: "auto" }}>
-          <h1 style={{ textAlign: "center" }}>My Notes</h1>
+          <h1 style={{ textAlign: "center" }}>Tulisan kecil</h1>
 
           {notes.map((note, i) => (
             <button
@@ -137,7 +137,7 @@ export default function App() {
                 padding: "10px",
                 borderRadius: "5px",
                 border: "none",
-                background: "#f1f1f1",
+                background: "#043927",
                 cursor: "pointer"
               }}
             >

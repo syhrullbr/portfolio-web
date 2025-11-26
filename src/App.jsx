@@ -3,10 +3,10 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 const images = [
-  { src: "https://picsum.photos/id/1015/800/600", title: "Artwork 1" },
-  { src: "https://picsum.photos/id/1025/800/600", title: "Artwork 2" },
-  { src: "https://picsum.photos/id/1035/800/600", title: "Artwork 3" },
-  { src: "https://picsum.photos/id/1045/800/600", title: "Artwork 4" },
+  { src: "this-pc/pictures/fareza.jpg", title: "Artwork 1" },
+  { src: "this-pc/pictures/abox-eyes.jpg", title: "Artwork 2" },
+  { src: "this-pc/pictures/people-go-and-go.jpg", title: "Artwork 3" },
+  { src: "this-pc/pictures/selow.jpg", title: "Artwork 4" },
 ];
 
 export default function App() {

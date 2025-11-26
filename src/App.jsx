@@ -6,34 +6,27 @@ import "yet-another-react-lightbox/styles.css";
    DATA GALERI
 ======================= */
 const images = [
-  { src: "/gallery/karya1.jpg", title: "abox eyes" },
+   { src: "/gallery/karya1.jpg", title: "abox eyes" },
   { src: "/gallery/karya2.jpg", title: "fareza" },
   { src: "/gallery/karya3.jpg", title: "i am gonna growing" },
   { src: "/gallery/karya4.jpg", title: "people go and go" },
 ];
-
 /* =======================
    DATA NOTES
+   (judul + link dokumen)
 ======================= */
 const notes = [
-  {
-    title: "Tentang Sunyi",
-    content: "Sunyi adalah bahasa yang tidak semua orang mampu mengerti."
-  },
-  {
-    title: "Menjadi Tenang",
-    content: "Aku belajar tenang bukan karena hidup mudah, tapi karena lelah berperang."
-  },
-  {
-    title: "Rindu",
-    content: "Rindu adalah jarak yang tumbuh diam-diam di dalam dada."
-  }
+  { title: "everything has many sides", link: "/notes/notes1.pdf" },
 ];
 
 export default function App() {
   const [page, setPage] = useState("gallery");
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+
+  // state untuk modal dokumen
+  const [docOpen, setDocOpen] = useState(false);
+  const [currentDoc, setCurrentDoc] = useState("");
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
@@ -109,21 +102,78 @@ export default function App() {
 
       {/* ========== NOTES ========== */}
       {page === "notes" && (
-        <div style={{ maxWidth: "700px", margin: "auto" }}>
+        <div style={{ maxWidth: "500px", margin: "auto" }}>
           <h1 style={{ textAlign: "center" }}>My Notes</h1>
-          {notes.map((note, i) => (
-            <div key={i} style={{
-              marginBottom: "20px",
-              padding: "15px",
-              borderRadius: "8px",
-              background: "#f4f4f4"
-            }}>
-              <h3>{note.title}</h3>
-              <p>{note.content}</p>
-            </div>
-          ))}
+          <ul style={{ listStyle: "none", padding: 0 }}>
+            {notes.map((note, i) => (
+              <li key={i} style={{ marginBottom: "15px" }}>
+                <button
+                  onClick={() => { setCurrentDoc(note.link); setDocOpen(true); }}
+                  style={{
+                    width: "100%",
+                    textAlign: "left",
+                    padding: "10px 15px",
+                    borderRadius: "5px",
+                    border: "none",
+                    background: "#f4f4f4",
+                    cursor: "pointer",
+                    transition: "0.3s"
+                  }}
+                  onMouseOver={e => e.currentTarget.style.background = "#ddd"}
+                  onMouseOut={e => e.currentTarget.style.background = "#f4f4f4"}
+                >
+                  {note.title}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* ========== MODAL DOKUMEN ========== */}
+      {docOpen && (
+        <div style={{
+          position: "fixed",
+          top: 0, left: 0, right: 0, bottom: 0,
+          background: "rgba(0,0,0,0.7)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          zIndex: 9999
+        }}>
+          <div style={{
+            width: "80%",
+            height: "80%",
+            background: "#fff",
+            borderRadius: "8px",
+            position: "relative",
+            padding: "10px"
+          }}>
+            <button 
+              onClick={() => setDocOpen(false)}
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                background: "#333",
+                color: "#fff",
+                border: "none",
+                borderRadius: "5px",
+                padding: "5px 10px",
+                cursor: "pointer"
+              }}
+            >
+              Close
+            </button>
+            <iframe 
+              src={currentDoc} 
+              style={{ width: "100%", height: "100%", border: "none", borderRadius: "5px" }}
+              title="Document Viewer"
+            />
+          </div>
         </div>
       )}
     </div>
   );
 }
+

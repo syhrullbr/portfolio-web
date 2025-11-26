@@ -3,10 +3,10 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 const images = [
-  { src: "/gallery/karya1.jpg", title: "Artwork 1" },
-  { src: "/gallery/karya2.jpg", title: "Artwork 2" },
-  { src: "/gallery/karya3.jpg", title: "Artwork 3" },
-  { src: "/gallery/karya4.jpg", title: "Artwork 4" },
+  { src: "C:\Users\User\OneDrive\Dokumen\portfolio-web\public\gallery\karya1.jpg", title: "Artwork 1" },
+  { src: "C:\Users\User\OneDrive\Dokumen\portfolio-web\public\gallery\karya2.jpg", title: "Artwork 2" },
+  { src: "C:\Users\User\OneDrive\Dokumen\portfolio-web\public\gallery\karya3.jpg", title: "Artwork 3" },
+  { src: "C:\Users\User\OneDrive\Dokumen\portfolio-web\public\gallery\karya3.jpg", title: "Artwork 4" },
 ];
 
 export default function App() {

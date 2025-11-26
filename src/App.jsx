@@ -4,9 +4,9 @@ import "yet-another-react-lightbox/styles.css";
 
 const images = [
   { src: "/gallery/karya1.jpg", title: "abox eyes" },
-  { src: "/gallery/karya2.png", title: "fareza" },
-  { src: "/gallery/karya3.png", title: "i am gonna growing" },
-  { src: "/gallery/karya4.png", title: "people go and go" },
+  { src: "/gallery/karya2.jpg", title: "fareza" },
+  { src: "/gallery/karya3.jpg", title: "i am gonna growing" },
+  { src: "/gallery/karya4.jpg", title: "people go and go" },
 ];
 
 export default function App() {

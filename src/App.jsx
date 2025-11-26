@@ -2,14 +2,19 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
+/* =======================
+   DATA GALERI
+======================= */
 const images = [
- const images = [
   { src: "/gallery/karya1.jpg", title: "abox eyes" },
   { src: "/gallery/karya2.jpg", title: "fareza" },
   { src: "/gallery/karya3.jpg", title: "i am gonna growing" },
   { src: "/gallery/karya4.jpg", title: "people go and go" },
 ];
 
+/* =======================
+   DATA NOTES
+======================= */
 const notes = [
   {
     title: "Tentang Sunyi",
@@ -32,10 +37,35 @@ export default function App() {
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      
       {/* NAVIGATION */}
       <nav style={{ display: "flex", justifyContent: "center", gap: "20px", marginBottom: "30px" }}>
-        <button onClick={() => setPage("gallery")}>Galeri</button>
-        <button onClick={() => setPage("notes")}>Notes</button>
+        <button 
+          onClick={() => setPage("gallery")}
+          style={{
+            padding: "10px 20px",
+            cursor: "pointer",
+            borderRadius: "5px",
+            border: "1px solid #333",
+            background: page === "gallery" ? "#333" : "#fff",
+            color: page === "gallery" ? "#fff" : "#333"
+          }}
+        >
+          Galeri
+        </button>
+        <button 
+          onClick={() => setPage("notes")}
+          style={{
+            padding: "10px 20px",
+            cursor: "pointer",
+            borderRadius: "5px",
+            border: "1px solid #333",
+            background: page === "notes" ? "#333" : "#fff",
+            color: page === "notes" ? "#fff" : "#333"
+          }}
+        >
+          Notes
+        </button>
       </nav>
 
       {/* ========== GALERI ========== */}
@@ -81,7 +111,6 @@ export default function App() {
       {page === "notes" && (
         <div style={{ maxWidth: "700px", margin: "auto" }}>
           <h1 style={{ textAlign: "center" }}>My Notes</h1>
-
           {notes.map((note, i) => (
             <div key={i} style={{
               marginBottom: "20px",

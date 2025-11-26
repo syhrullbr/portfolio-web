@@ -16,7 +16,10 @@ const images = [
    DATA NOTES (DOCUMENT)
 ======================= */
 const notes = [
-  { title: "everything has many sides", link: "/notes/notes1.pdf" },
+  { title: "Trauma masa kecil", link: "/notes/notes1.pdf" },
+  { title: "Dewasa", link: "/notes/notes2.pdf" },
+  { title: "Yatim pasif", link: "/notes/notes3.pdf" },
+  { title: "Semangat baru", link: "/notes/notes4.pdf" },
 ];
 
 
@@ -90,7 +93,8 @@ export default function App() {
             }}
           />
           <p style={{ maxWidth: "500px", margin: "auto", lineHeight: "1.8" }}>
-            Haloo!! Nama gua Syahrul budi ramadhan,biasa dipanggil Arul, atau beberapa orang yang deet biasa manggil Abox(Arul Boxing)atau Ndut juga kadang.Gua lahir di Bekasi tanggal 05 Oktober 2005 dan sempat menetap di Jogja pas kecil. Utuk sekarang, kesibukan ua adalah bekerja di salah satu dealer motor yang logonya kunci sebagai Head marketing dan ada beberapa kesibukan lainnya saat luang seperti jadi MC wedding, ngeband,Nulis buku ,DLL deh kalo luang.
+            Haloo!! Nama gua Syahrul budi ramadhan,biasa dipanggil Arul, atau beberapa orang yang deet biasa manggil Abox(Arul Boxing)atau Ndut juga kadang.Gua lahir di Bekasi tanggal 05 Oktober 2005 dan sempat menetap di Jogja waktu masih kecil. Utuk sekarang, kesibukan gua adalah bekerja di salah satu dealer motor yang logonya kunci wkwkwk. Disana gua kerja sebagai Head marketing dan ngga disana doang gua bekerja. Biasanya kalau ada luang ada beberapa kesibukan lainnya juga seperti jadi MC wedding, ngeband,Nulis buku, DLL deh kalo ada luang.
+
             Website ini adalah ruang kecil gua untuk menumpahkan sedikit karya dan tulisan gua yang sebelumnya bingung mau dituangin kemana hahaha. Jadi, gua harap gua bisa membawa engaruh baik lewat karya kecil gua ini di hidup kalian. enjoy guys!!
           </p>
         </div>
@@ -137,7 +141,7 @@ export default function App() {
                 padding: "10px",
                 borderRadius: "5px",
                 border: "none",
-                background: "#043927",
+                background: "#f1f1f1",
                 cursor: "pointer"
               }}
             >

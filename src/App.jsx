@@ -67,10 +67,12 @@ export default function App() {
 
   return (
     <div style={{
-      fontFamily: "Georgia, serif",
-      background: "linear-gradient(to bottom, #fafafa, #f0f0f0)",
-      minHeight: "100vh"
-    }}>
+  fontFamily: "Georgia, serif",
+  background: "linear-gradient(to bottom, #fafafa, #f0f0f0)",
+  minHeight: "100vh",
+  color: "#1a1a1a"
+}}>
+
 
       {/* AUDIO BACKGROUND */}
       <audio ref={audioRef} loop>
@@ -207,10 +209,11 @@ export default function App() {
                 padding: "12px",
                 marginBottom: "15px",
                 borderRadius: "8px",
-                background: "#fff",
+                background: "#ffffff",
+                color: "#222",
                 cursor: "pointer"
               }}
-            >
+             >
               {note.title}
             </div>
           ))}
@@ -221,8 +224,8 @@ export default function App() {
       {page === "notes" && currentNote && (
         <div style={{ padding: "40px", maxWidth: "600px", margin: "auto" }}>
           <button onClick={() => setCurrentNote(null)}>← kembali</button>
-          <h1>{currentNote.title}</h1>
-          <p style={{ marginTop: "20px", lineHeight: "1.8" }}>
+          <h1 style={{ color: "#111" }}>{currentNote.title}</h1>
+          <p style={{ marginTop: "20px", lineHeight: "1.8", color: "#333" }}>
             {currentNote.content}
           </p>
         </div>

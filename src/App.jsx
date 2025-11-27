@@ -139,9 +139,6 @@ export default function App() {
                 style={{
                   <div
                     key={i}
-                    onClick={() => { setPage(p); setMenu(false); setCurrentNote(null); }}
-                    onMouseEnter={(e) => e.currentTarget.style.background = "#222"}
-                    onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
                     style={{
                       padding: "12px 18px",
                       cursor: "pointer",

@@ -101,36 +101,54 @@ export default function App() {
 
       {/* MENU TITIK TIGA */}
       <div style={{ position: "fixed", top: 15, right: 15, zIndex: 9999 }}>
-        <button 
-          onClick={() => setMenu(!menu)}
-          style={{
-            fontSize: "26px",
-            background: "none",
-            border: "none",
-            cursor: "pointer"
-          }}
-        >⋮</button>
+  <button 
+    onClick={() => setMenu(!menu)}
+    style={{
+      fontSize: "22px",
+      width: "42px",
+      height: "42px",
+      borderRadius: "50%",
+      background: "#111",
+      color: "#fff",
+      border: "none",
+      cursor: "pointer",
+      boxShadow: "0 4px 12px rgba(0,0,0,.3)"
+    }}
+  >
+    ⋮
+  </button>
 
         {menu && (
           <div style={{
             position: "absolute",
             right: 0,
-            top: "35px",
-            background: "#fff",
-            boxShadow: "0 5px 15px rgba(0,0,0,0.2)",
-            borderRadius: "10px",
-            overflow: "hidden"
+            top: "50px",
+            background: "#111",
+            color: "#fff",
+            boxShadow: "0 10px 25px rgba(0,0,0,0.4)",
+            borderRadius: "12px",
+            overflow: "hidden",
+            minWidth: "140px"
           }}>
+
+
             {["about","gallery","notes"].map((p,i) => (
               <div
                 key={i}
                 onClick={() => { setPage(p); setMenu(false); setCurrentNote(null); }}
                 style={{
-                  padding: "12px 18px",
-                  cursor: "pointer",
-                  borderBottom: i < 2 ? "1px solid #eee" : "none"
-                }}
-              >
+                  <div
+                    key={i}
+                    onClick={() => { setPage(p); setMenu(false); setCurrentNote(null); }}
+                    onMouseEnter={(e) => e.currentTarget.style.background = "#222"}
+                    onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
+                    style={{
+                      padding: "12px 18px",
+                      cursor: "pointer",
+                      borderBottom: i < 2 ? "1px solid rgba(255,255,255,.15)" : "none",
+                      transition: ".3s"
+                   }}
+                 >
                 {p === "about" && "About Me"}
                 {p === "gallery" && "My Works"}
                 {p === "notes" && "My Notes"}

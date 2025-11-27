@@ -102,21 +102,21 @@ export default function App() {
       {/* MENU TITIK TIGA */}
       <div style={{ position: "fixed", top: 15, right: 15, zIndex: 9999 }}>
   <button 
-    onClick={() => setMenu(!menu)}
-    style={{
-      fontSize: "22px",
-      width: "42px",
-      height: "42px",
-      borderRadius: "50%",
-      background: "#111",
-      color: "#fff",
-      border: "none",
-      cursor: "pointer",
-      boxShadow: "0 4px 12px rgba(0,0,0,.3)"
-    }}
-  >
-    ⋮
-  </button>
+  type="button"
+  onClick={() => setMenu(!menu)}
+  style={{
+    fontSize: "20px",
+    width: "40px",
+    height: "40px",
+    borderRadius: "50%",
+    background: "#111",
+    color: "#fff",
+    border: "none",
+    cursor: "pointer",
+  }}
+>
+  &#8942;
+</button>
 
         {menu && (
           <div style={{
@@ -137,15 +137,13 @@ export default function App() {
                 key={i}
                 onClick={() => { setPage(p); setMenu(false); setCurrentNote(null); }}
                 style={{
-                  <div
-                    key={i}
-                    style={{
-                      padding: "12px 18px",
-                      cursor: "pointer",
-                      borderBottom: i < 2 ? "1px solid rgba(255,255,255,.15)" : "none",
-                      transition: ".3s"
-                   }}
-                 >
+                  padding: "12px 18px",
+                  cursor: "pointer",
+                  borderBottom: i < 2 ? "1px solid rgba(255,255,255,.15)" : "none",
+                  background: "#111",
+                  color: "#fff",
+                }}
+              >
                 {p === "about" && "About Me"}
                 {p === "gallery" && "My Works"}
                 {p === "notes" && "My Notes"}
